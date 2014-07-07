@@ -1,0 +1,9 @@
+.alert-box{
+    display: none;
+    background-color:red;
+    border:#ccc 1px solid;
+}
+
+.customerFilter{
+    padding-top: 20px;
+}

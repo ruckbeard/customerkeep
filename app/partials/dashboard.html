@@ -1,0 +1,48 @@
+<div class="contain-to-grid">
+    <nav class="top-bar" data-topbar>
+        <ul class="title-area">
+            <li class="name">
+                <h1><a href="#">CustomerKeep</a></h1>
+            </li>
+        </ul>
+
+        <section class="top-bar-section">
+            <!-- Right Nav Section -->
+            <ul class="right">
+                <li><a href="#">Logout</a></li>
+            </ul>
+
+            <!-- Left Nav Section -->
+            <ul class="left">
+            </ul>
+        </section>
+    </nav>
+</div>
+<div class="row">
+    <div class="large-6 columns">
+        <h1>{{title}}</h1>
+    </div>
+    <div class="large-6 columns customerFilter">
+        <input type="text" placeholder="Filter Customers" ng-model="name" />
+    </div>
+</div>
+<div class="row">
+    <div class="large-12 columns">
+        <table ng-controller="customerController" width="100%" class="twelve">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Address</th>
+                    <th>City</th>
+                </tr>
+            </thead>
+            <tbody ng-repeat="customer in customers | orderBy: 'name' | filter: name">
+                <tr>
+                    <td>{{customer.name}}</td>
+                    <td>{{customer.address}}</td>
+                    <td>{{customer.city}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
